@@ -1,0 +1,6 @@
+<p>
+  users works!
+</p>
+<ng-container *ngFor="let user of users$ | async">
+{{ user | json }}
+</ng-container>
