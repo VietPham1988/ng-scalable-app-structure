@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserBizModel } from '@app/shared/business-models/user/user.biz-model';
+import { UserBizModel } from '@app/modules/core/business-models/user/user.biz-model';
 
 @Component({
   selector: 'app-users',

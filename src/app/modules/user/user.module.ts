@@ -1,14 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsersComponent } from './pages/users/users.component';
-import { UserBizModel } from '@app/shared/business-models/user/user.biz-model';
-import { UserRouting } from './user.routing';
-import { UserDetailComponent } from './pages/user-detail/user-detail.component';
-import { NewUserComponent } from './pages/new-user/new-user.component';
-import { UserNgrxStoreModule } from '../stores/ngrx-store/features/user/user-ngrx-store.module';
-import { UserNgxsStoreModule } from '../stores/ngxs-store/features/user/user-ngxs-store.module';
-import { UserAkitaStoreModule } from '../stores/akita-store/features/home/user-akita-store.module';
-import { UserRxStoreModule } from '../stores/rxjs-store/features/home/user-rx-store.module';
+import { UserBizModel } from '@app/modules/core/business-models/user';
+import { UsersComponent, UserDetailComponent, NewUserComponent } from '@app/modules/user/pages';
+import { UserRouting } from '@app/modules/user/user.routing';
+import { UserRxStoreModule } from '@app/modules/core/stores/rxjs-store/features/user';
 
 @NgModule({
   imports: [

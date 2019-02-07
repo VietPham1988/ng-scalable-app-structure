@@ -1,18 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { DataService } from './shared/services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
-import { AppRoutes } from './app.routing';
 import { FormsModule } from '@angular/forms';
-import { ErrorModule } from './modules/error/error.module';
-import { AppComponent } from './components/app/app.component';
-import { HomeComponent } from './components/home/home.component';
-import { NgxsRootStoreModule } from './modules/stores/ngxs-store/ngxs-root-store.module';
-import { AppNgrxStoreModule } from './modules/stores/ngrx-store/app-ngrx-store.module';
-import { AkitaRootStoreModule } from './modules/stores/akita-store/akita-root-store.module';
-import { RxRootStoreModule } from './modules/stores/rxjs-store/rx-root-store.module';
+import { ErrorModule } from '@app/modules/error/error.module';
+import { AppRoutes } from '@app/app.routing';
+import { DataService } from '@app/modules/shared/services/data.service';
+import { RxRootStoreModule } from '@app/modules/core/stores/rxjs-store';
+import { AppComponent } from '@app/components/app/app.component';
+import { HomeComponent } from '@app/components/home/home.component';
+import { UserAsyncService } from '@app/modules/core/async-services/user.async-service';
+import { UserHttpService } from '@app/modules/shared/services/user.http-service';
 
 @NgModule({
   imports: [
@@ -33,6 +32,10 @@ import { RxRootStoreModule } from './modules/stores/rxjs-store/rx-root-store.mod
     AppComponent,
     HomeComponent
   ],
+  providers: [{
+    provide: UserAsyncService,
+    useClass: UserHttpService
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
