@@ -7,7 +7,7 @@ import { ModuleNameEnum } from '@app/modules/shared/enums/module-name.enum';
   name: ModuleNameEnum.App,
   defaults: initAppState()
 })
-export class NgxsAppState {
+export class AppNgxsState {
   // @Selector()
   // static token$(state: AppState) {
   //   return state.token;

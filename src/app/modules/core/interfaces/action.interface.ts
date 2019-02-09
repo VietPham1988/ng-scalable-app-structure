@@ -2,7 +2,8 @@ export abstract class Action {
   type: string;
 }
 
-export const getType = (action: Action) => action.type || action.constructor['type'] ;
+export const GetType = (action: Action): string => action.type || action.constructor['type'] ;
+export const GetSubType = (action: Action): string => action['subType'] || action.constructor['subType'] ;
 
 export abstract class BaseSuccessAction implements Action {
   type: string;

@@ -3,7 +3,7 @@ import { AppActions, AppActionNames, AppSuccessAction, AppFailedAction } from '@
 
 
 // reducer
-export function AppReducer(appState: AppState = initAppState(), action: AppActions): AppState {
+export function AppNgrxReducer(appState: AppState = initAppState(), action: AppActions): AppState {
   switch (action.type) {
     // case AppActionNames.GO_TO_LOGIN_PAGE:
     //   const gotoAction = action as GoToLoginPageAction;

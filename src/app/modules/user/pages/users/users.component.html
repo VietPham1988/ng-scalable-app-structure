@@ -1,6 +1,7 @@
 <p>
   users works!
 </p>
+<a [routerLink]="['123']">Go to User Detail Page</a>
 <ng-container *ngFor="let user of users$ | async">
 {{ user | json }}
 </ng-container>

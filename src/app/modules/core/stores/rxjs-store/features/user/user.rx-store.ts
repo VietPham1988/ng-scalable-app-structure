@@ -5,11 +5,14 @@ import { UserState, initUserState } from '@app/modules/core/business-models/user
 import { CommandDispatcher } from '@app/modules/core/interfaces/command-dispatcher.interface';
 import { UserAsyncService } from '@app/modules/core/async-services/user.async-service';
 import { UserActionNames, GetUsersAction, UserSuccessAction, UserFailedAction } from '@app/modules/core/business-models/user/user.actions';
+import { AutoUnsubscriber } from '@app/modules/shared/safe-unsubscriber';
+import { tap } from 'rxjs/operators';
 
+@AutoUnsubscriber()
 @Injectable()
 export class UserRxStore extends BaseRxStore<UserState> {
   constructor(
-    dispatcher: CommandDispatcher,
+    protected dispatcher: CommandDispatcher,
     private userService: UserAsyncService
   ) {
     super( dispatcher, initUserState() );
@@ -25,7 +28,9 @@ export class UserRxStore extends BaseRxStore<UserState> {
   }
 
   getUsers(action: GetUsersAction) {
-    this.userService.getUsers().subscribe( users =>
+    this.userService.getUsers().pipe(
+      tap( users => this.dispatcher.fire( new UserSuccessAction(UserActionNames.GET_USERS, users)) )
+    ).subscribe( users =>
       this.setState({
         ...this.getState(),
         users: users as []

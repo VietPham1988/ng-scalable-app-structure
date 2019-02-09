@@ -8,7 +8,7 @@ import { GetUsersAction } from '@app/modules/core/business-models/user/user.acti
   name: ModuleNameEnum.User,
   defaults: initUserState()
 })
-export class NgxsUserState {
+export class UserNgxsState {
 
   constructor(private userService: UserAsyncService) { }
 

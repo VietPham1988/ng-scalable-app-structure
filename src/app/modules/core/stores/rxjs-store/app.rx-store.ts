@@ -4,13 +4,21 @@ import { map } from 'rxjs/operators';
 import { Dictionary } from 'extension';
 import { AppState, initAppState } from '@app/modules/core/business-models/app/app.state-model';
 import { CommandDispatcher } from '@app/modules/core/interfaces/command-dispatcher.interface';
-import { AppActionNames, GoToLoginPageAction, AppSuccessAction, AppFailedAction } from '@app/modules/core/business-models/app/app.actions';
 import { BaseRxStore } from '@app/modules/core/stores/rxjs-store/base.rx-store';
+import {
+  AppActionNames,
+  GoToLoginPageAction,
+  AppSuccessAction,
+  AppFailedAction
+} from '@app/modules/core/business-models/app/app.actions';
 
 @Injectable()
 export class AppRxStore extends BaseRxStore<AppState> {
-  constructor( dispatcher: CommandDispatcher ) {
+  constructor(
+    dispatcher: CommandDispatcher,
+  ) {
     super(dispatcher, initAppState());
+    this.registerHandlers(this.getActionHandlers());
   }
 
   public get token$(): Observable<string> {

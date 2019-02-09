@@ -2,7 +2,7 @@ import { UserState, initUserState } from '@app/modules/core/business-models/user
 import { UserActions, UserActionNames, UserFailedAction, UserSuccessAction } from '@app/modules/core/business-models/user/user.actions';
 
 // reducer
-export function UserReducer(userState: UserState = initUserState(), action: UserActions): UserState {
+export function UserNgrxReducer(userState: UserState = initUserState(), action: UserActions): UserState {
   switch (action.type) {
     case UserActionNames.ACTION_SUCCESS:
       return actionSuccessReducer(userState, action as UserSuccessAction);

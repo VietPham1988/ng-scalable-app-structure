@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Actions } from '@ngrx/effects';
-import { AppSelectors } from './app.selectors';
+import { AppNgrxSelectors } from './app.ngrx-selectors';
 
 @Injectable()
-export class AppEffects {
+export class AppNgrxEffects {
 
   constructor(
     private actions$: Actions,
-    private appSelectors: AppSelectors
+    private appSelectors: AppNgrxSelectors
   ) {}
 }

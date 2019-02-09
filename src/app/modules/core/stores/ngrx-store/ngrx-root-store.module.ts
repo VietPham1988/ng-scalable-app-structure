@@ -3,22 +3,22 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
-import { AppReducer } from '@app/modules/core/stores/ngrx-store/app.reducers';
-import { AppEffects } from '@app/modules/core/stores/ngrx-store/app.effects';
+import { AppNgrxReducer } from '@app/modules/core/stores/ngrx-store/app.ngrx-reducers';
+import { AppNgrxEffects } from '@app/modules/core/stores/ngrx-store/app.ngrx-effects';
 import { CommandDispatcher } from '@app/modules/core/interfaces/command-dispatcher.interface';
 import { NgrxDispatcher } from '@app/modules/core/stores/ngrx-store/ngrx.dispatcher';
-import { AppSelectors } from '@app/modules/core/stores/ngrx-store/app.selectors';
+import { AppNgrxSelectors } from '@app/modules/core/stores/ngrx-store/app.ngrx-selectors';
 import { AppQueries } from '@app/modules/core/business-models/app/app-queries.interface';
 
 @NgModule({
   imports: [
     StoreModule.forRoot({
-      app: AppReducer
+      app: AppNgrxReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 10 //  Buffers the last 10 states
     }),
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([AppNgrxEffects])
   ],
   exports: [
     StoreModule,
@@ -36,10 +36,10 @@ export class NgrxRootStoreModule {
           provide: CommandDispatcher,
           useClass: NgrxDispatcher
         },
-        AppSelectors,
+        AppNgrxSelectors,
         {
           provide: AppQueries,
-          useExisting: AppSelectors,
+          useExisting: AppNgrxSelectors,
         }
       ]
     };

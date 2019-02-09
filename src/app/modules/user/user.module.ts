@@ -14,9 +14,6 @@ import { UserRxStoreModule } from '@app/modules/core/stores/rxjs-store/features/
     // UserAkitaStoreModule
     UserRxStoreModule
   ],
-  providers: [
-    UserBizModel
-  ],
   declarations: [
     UsersComponent,
     UserDetailComponent,

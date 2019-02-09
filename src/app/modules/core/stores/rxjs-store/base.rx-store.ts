@@ -1,14 +1,16 @@
 import { filter, tap } from 'rxjs/operators';
 import { Dictionary } from 'extension';
 import { BehaviorSubject } from 'rxjs';
-import { Action, getType } from '@app/modules/core/interfaces/action.interface';
+import { Action, GetType } from '@app/modules/core/interfaces/action.interface';
 import { CommandDispatcher } from '@app/modules/core/interfaces/command-dispatcher.interface';
 
 export abstract class BaseRxStore<T> {
   private state: T;
   public readonly state$: BehaviorSubject<T>;
+  abstract getActionHandlers(): Dictionary;
+
   constructor(
-    private dispatcher: CommandDispatcher,
+    protected dispatcher: CommandDispatcher,
     initialState: any
   ) {
     this.state = initialState;
@@ -21,15 +23,13 @@ export abstract class BaseRxStore<T> {
 
   protected registerHandlers(actionHandlers: Dictionary) {
     this.dispatcher.actions$.pipe(
-      filter( (action: Action) => actionHandlers[getType(action)])
-    ).subscribe( action => actionHandlers[getType(action)](action) );
+      filter( (action: Action) => actionHandlers[GetType(action)])
+    ).subscribe( action => actionHandlers[GetType(action)](action) );
   }
 
   protected setState(newState: T) {
     this.state = newState;
     this.state$.next(this.state);
   }
-
-  abstract getActionHandlers(): Dictionary;
 }
 

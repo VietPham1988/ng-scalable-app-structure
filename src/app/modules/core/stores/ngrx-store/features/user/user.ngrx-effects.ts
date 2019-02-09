@@ -6,7 +6,7 @@ import { UserActionNames, UserSuccessAction, UserFailedAction } from '@app/modul
 import { UserAsyncService } from '@app/modules/core/async-services/user.async-service';
 
 @Injectable()
-export class UserEffects {
+export class UserNgrxEffects {
 
   @Effect()
   getAllUsers = this.actions$.pipe(
