@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserBizModel } from '@app/modules/core/business-models/user/user.biz-model';
-import { Unsubscriber } from '@app/modules/shared/safe-unsubscriber/unsubscriber';
-import { AutoUnsubscriber } from '@app/modules/shared/safe-unsubscriber';
+import { UserBizModel } from 'app/modules/core/business-models/user/user.biz-model';
+import { Unsubscriber } from 'app/modules/shared/safe-unsubscriber/unsubscriber';
+import { AutoUnsubscriber } from 'app/modules/shared/safe-unsubscriber';
 
 @Component({
   selector: 'app-users',

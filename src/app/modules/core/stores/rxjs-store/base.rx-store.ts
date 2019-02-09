@@ -1,8 +1,8 @@
 import { filter, tap } from 'rxjs/operators';
 import { Dictionary } from 'extension';
 import { BehaviorSubject } from 'rxjs';
-import { Action, GetType } from '@app/modules/core/interfaces/action.interface';
-import { CommandDispatcher } from '@app/modules/core/interfaces/command-dispatcher.interface';
+import { Action, GetType } from 'app/modules/core/interfaces/action.interface';
+import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
 
 export abstract class BaseRxStore<T> {
   private state: T;

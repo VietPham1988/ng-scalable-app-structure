@@ -1,5 +1,5 @@
-import { UserState, initUserState } from '@app/modules/core/business-models/user/user.state-model';
-import { UserActions, UserActionNames, UserFailedAction, UserSuccessAction } from '@app/modules/core/business-models/user/user.actions';
+import { UserState, initUserState } from 'app/modules/core/business-models/user/user.state-model';
+import { UserActions, UserActionNames, UserFailedAction, UserSuccessAction } from 'app/modules/core/business-models/user/user.actions';
 
 // reducer
 export function UserNgrxReducer(userState: UserState = initUserState(), action: UserActions): UserState {

@@ -1,11 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "resolveJsonModule": true,
     "baseUrl": "./",
     "outDir": "../out-tsc/app",
     "types": [],
     "paths": {
-      "@app/*": ["app/*"]
+      "@src/*": ["./"]
     }
   },
   "exclude": [

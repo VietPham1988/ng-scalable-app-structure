@@ -1,8 +1,8 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
-import { UserState, initUserState } from '@app/modules/core/business-models/user/user.state-model';
-import { ModuleNameEnum } from '@app/modules/shared/enums/module-name.enum';
-import { UserAsyncService } from '@app/modules/core/async-services/user.async-service';
-import { GetUsersAction } from '@app/modules/core/business-models/user/user.actions';
+import { UserState, initUserState } from 'app/modules/core/business-models/user/user.state-model';
+import { ModuleNameEnum } from 'app/modules/shared/enums/module-name.enum';
+import { UserAsyncService } from 'app/modules/core/async-services/user.async-service';
+import { GetUsersAction } from 'app/modules/core/business-models/user/user.actions';
 
 @State<UserState>({
   name: ModuleNameEnum.User,

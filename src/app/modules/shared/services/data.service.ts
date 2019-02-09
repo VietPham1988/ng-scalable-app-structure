@@ -127,7 +127,7 @@ export class DataService implements InMemoryDbService {
         'isActive': false,
         'age': 26,
         'company': 'APPLIDEC',
-        'email': 'aline.sutton@applidec.ca',
+        'email': 'aline.suttonapplidec.ca',
         'phone': '+1 (986) 515-2676',
         'address': '374 Stone Avenue, Gordon, Montana, 4468',
         'about': 'Nostrud ullamco ullamco enim excepteur. Deserunt fugiat consequat id consectetur sint. In commodo excepteur et sunt officia laboris excepteur dolore aute. Ex non ex commodo labore eiusmod eiusmod ea et enim. Labore ipsum ea Lorem tempor est do ex aute Lorem adipisicing id. Nisi ullamco qui ut dolore cillum.',

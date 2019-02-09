@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { createSelector, createFeatureSelector, Store } from '@ngrx/store';
-import { UserState } from '@app/modules/core/business-models/user/user.state-model';
-import { ModuleNameEnum } from '@app/modules/shared/enums/module-name.enum';
-import { UserQueries } from '@app/modules/core/business-models/user/user-queries.interface';
-import { BaseNgrxSelector } from '@app/modules/core/stores/ngrx-store';
+import { UserState } from 'app/modules/core/business-models/user/user.state-model';
+import { ModuleNameEnum } from 'app/modules/shared/enums/module-name.enum';
+import { UserQueries } from 'app/modules/core/business-models/user/user-queries.interface';
+import { BaseNgrxSelector } from 'app/modules/core/stores/ngrx-store';
 import { Actions } from '@ngrx/effects';
-import { UserActionNames } from '@app/modules/core/business-models/user';
+import { UserActionNames } from 'app/modules/core/business-models/user';
 
 const getUserState = createFeatureSelector<UserState>(
   ModuleNameEnum.User

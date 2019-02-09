@@ -1,11 +1,11 @@
 import { Dictionary } from 'extension';
 import { Injectable } from '@angular/core';
-import { BaseRxStore } from '@app/modules/core/stores/rxjs-store/base.rx-store';
-import { UserState, initUserState } from '@app/modules/core/business-models/user/user.state-model';
-import { CommandDispatcher } from '@app/modules/core/interfaces/command-dispatcher.interface';
-import { UserAsyncService } from '@app/modules/core/async-services/user.async-service';
-import { UserActionNames, GetUsersAction, UserSuccessAction, UserFailedAction } from '@app/modules/core/business-models/user/user.actions';
-import { AutoUnsubscriber } from '@app/modules/shared/safe-unsubscriber';
+import { BaseRxStore } from 'app/modules/core/stores/rxjs-store/base.rx-store';
+import { UserState, initUserState } from 'app/modules/core/business-models/user/user.state-model';
+import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
+import { UserAsyncService } from 'app/modules/core/async-services/user.async-service';
+import { UserActionNames, GetUsersAction, UserSuccessAction, UserFailedAction } from 'app/modules/core/business-models/user/user.actions';
+import { AutoUnsubscriber } from 'app/modules/shared/safe-unsubscriber';
 import { tap } from 'rxjs/operators';
 
 @AutoUnsubscriber()

@@ -1,6 +1,6 @@
 import { Actions } from '@ngxs/store';
 import { filter } from 'rxjs/operators';
-import { BaseSuccessAction, BaseFailedAction, GetType } from '@app/modules/core/interfaces/action.interface';
+import { BaseSuccessAction, BaseFailedAction, GetType } from 'app/modules/core/interfaces/action.interface';
 
 export class BaseNgxsSelector {
   constructor(

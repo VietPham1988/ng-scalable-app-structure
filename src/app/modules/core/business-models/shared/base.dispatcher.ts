@@ -1,7 +1,7 @@
 import { filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { GetType, Action, BaseSuccessAction, BaseFailedAction, GetSubType } from '@app/modules/core/interfaces/action.interface';
-import { CommandDispatcher } from '@app/modules/core/interfaces';
+import { GetType, Action, BaseSuccessAction, BaseFailedAction, GetSubType } from 'app/modules/core/interfaces/action.interface';
+import { CommandDispatcher } from 'app/modules/core/interfaces';
 
 export abstract class BaseDispatcher implements CommandDispatcher {
   constructor( ) { }

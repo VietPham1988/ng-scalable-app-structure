@@ -1,8 +1,8 @@
 import { Query, Store } from '@datorama/akita';
 import { filter } from 'rxjs/operators';
 import { Dictionary } from 'extension';
-import { CommandDispatcher } from '@app/modules/core/interfaces/command-dispatcher.interface';
-import { GetType, Action, BaseSuccessAction, BaseFailedAction } from '@app/modules/core/interfaces/action.interface';
+import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
+import { GetType, Action, BaseSuccessAction, BaseFailedAction } from 'app/modules/core/interfaces/action.interface';
 
 export abstract class BaseAkQueries<T> extends Query<T> {
   constructor(

@@ -1,6 +1,6 @@
 // Thanks to Netanel Basal
 // src: https://netbasal.com/automagically-unsubscribe-in-angular-4487e9853a88
-import { Unsubscriber } from '@app/modules/shared/safe-unsubscriber/unsubscriber';
+import { Unsubscriber } from 'app/modules/shared/safe-unsubscriber/unsubscriber';
 
 export function AutoUnsubscriber() {
   return function ( constructor ) {

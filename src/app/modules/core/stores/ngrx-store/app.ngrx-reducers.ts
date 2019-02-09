@@ -1,5 +1,5 @@
-import { AppState, initAppState } from '@app/modules/core/business-models/app/app.state-model';
-import { AppActions, AppActionNames, AppSuccessAction, AppFailedAction } from '@app/modules/core/business-models/app/app.actions';
+import { AppState, initAppState } from 'app/modules/core/business-models/app/app.state-model';
+import { AppActions, AppActionNames, AppSuccessAction, AppFailedAction } from 'app/modules/core/business-models/app/app.actions';
 
 
 // reducer

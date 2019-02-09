@@ -1,10 +1,10 @@
 import { StoreConfig } from '@datorama/akita';
 import { BaseAkStore } from './base.ak-store';
 import { Dictionary } from 'extension';
-import { ModuleNameEnum } from '@app/modules/shared/enums/module-name.enum';
-import { AppState, initAppState } from '@app/modules/core/business-models/app/app.state-model';
-import { CommandDispatcher } from '@app/modules/core/interfaces/command-dispatcher.interface';
-import { AppActionNames, GoToLoginPageAction, AppSuccessAction, AppFailedAction } from '@app/modules/core/business-models/app/app.actions';
+import { ModuleNameEnum } from 'app/modules/shared/enums/module-name.enum';
+import { AppState, initAppState } from 'app/modules/core/business-models/app/app.state-model';
+import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
+import { AppActionNames, GoToLoginPageAction, AppSuccessAction, AppFailedAction } from 'app/modules/core/business-models/app/app.actions';
 
 @StoreConfig({ name: ModuleNameEnum.App })
 export class AppAkStore extends BaseAkStore<AppState> {

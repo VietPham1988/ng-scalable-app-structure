@@ -1,9 +1,9 @@
 import { Injectable, Inject } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { UserQueries } from '@app/modules/core/business-models/user/user-queries.interface';
-import { UserRxStore } from '@app/modules/core/stores/rxjs-store/features/user/user.rx-store';
-import { CommandDispatcher } from '@app/modules/core/interfaces';
-import { AutoUnsubscriber } from '@app/modules/shared/safe-unsubscriber';
+import { UserQueries } from 'app/modules/core/business-models/user/user-queries.interface';
+import { UserRxStore } from 'app/modules/core/stores/rxjs-store/features/user/user.rx-store';
+import { CommandDispatcher } from 'app/modules/core/interfaces';
+import { AutoUnsubscriber } from 'app/modules/shared/safe-unsubscriber';
 
 @AutoUnsubscriber()
 @Injectable()

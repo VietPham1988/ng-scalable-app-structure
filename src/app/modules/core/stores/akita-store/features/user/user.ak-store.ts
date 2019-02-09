@@ -1,11 +1,11 @@
 import { StoreConfig } from '@datorama/akita';
 import { Dictionary } from 'extension';
-import { ModuleNameEnum } from '@app/modules/shared/enums/module-name.enum';
-import { BaseAkStore } from '@app/modules/core/stores/akita-store/base.ak-store';
-import { UserState, initUserState } from '@app/modules/core/business-models/user/user.state-model';
-import { CommandDispatcher } from '@app/modules/core/interfaces/command-dispatcher.interface';
-import { UserAsyncService } from '@app/modules/core/async-services/user.async-service';
-import { UserActionNames, GetUsersAction, UserSuccessAction, UserFailedAction } from '@app/modules/core/business-models/user/user.actions';
+import { ModuleNameEnum } from 'app/modules/shared/enums/module-name.enum';
+import { BaseAkStore } from 'app/modules/core/stores/akita-store/base.ak-store';
+import { UserState, initUserState } from 'app/modules/core/business-models/user/user.state-model';
+import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
+import { UserAsyncService } from 'app/modules/core/async-services/user.async-service';
+import { UserActionNames, GetUsersAction, UserSuccessAction, UserFailedAction } from 'app/modules/core/business-models/user/user.actions';
 
 @StoreConfig({ name: ModuleNameEnum.User })
 export class UserAkStore extends BaseAkStore<UserState> {
