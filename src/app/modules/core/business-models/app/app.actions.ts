@@ -1,4 +1,4 @@
-import { Action, BaseSuccessAction, BaseFailedAction } from 'app/modules/core/interfaces/action.interface';
+import { Action, BaseSuccessAction, BaseFailedAction } from 'app/modules/core/stores/action.interface';
 
 export enum AppActionNames {
   GO_TO_LOGIN_PAGE = '[APP] Go To Login Page',

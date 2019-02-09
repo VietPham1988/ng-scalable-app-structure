@@ -1,9 +1,8 @@
 import { Store, Actions } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
-import { Action } from 'app/modules/core/interfaces/action.interface';
-import { BaseDispatcher } from 'app/modules/core/business-models/shared/base.dispatcher';
+import { Action } from 'app/modules/core/stores/action.interface';
+import { BaseDispatcher, CommandDispatcher } from 'app/modules/shared/dispatchers';
 
 @Injectable()
 export class NgxsDispatcher extends BaseDispatcher implements CommandDispatcher {

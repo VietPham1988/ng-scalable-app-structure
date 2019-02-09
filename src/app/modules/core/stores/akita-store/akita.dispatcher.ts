@@ -1,8 +1,7 @@
 import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
 import { Action } from '@ngrx/store';
-import { BaseDispatcher } from 'app/modules/core/business-models/shared/base.dispatcher';
+import { CommandDispatcher, BaseDispatcher } from 'app/modules/shared/dispatchers';
 
 @Injectable()
 export class AkDispatcher extends BaseDispatcher implements CommandDispatcher {

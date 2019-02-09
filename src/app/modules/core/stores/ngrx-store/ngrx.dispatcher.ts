@@ -1,11 +1,10 @@
 import { Store } from '@ngrx/store';
 import { Actions } from '@ngrx/effects';
 import { Observable } from 'rxjs';
-import { Action } from 'app/modules/core/interfaces/action.interface';
 import { Injectable } from '@angular/core';
-import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
+import { CommandDispatcher, BaseDispatcher } from 'app/modules/shared/dispatchers';
 import { AppState } from 'app/modules/core/business-models/app/app.state-model';
-import { BaseDispatcher } from 'app/modules/core/business-models/shared/base.dispatcher';
+import { Action } from 'app/modules/core/stores/action.interface';
 
 @Injectable()
 export class NgrxDispatcher extends BaseDispatcher implements CommandDispatcher {

@@ -1,5 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
+import { CommandDispatcher } from 'app/modules/shared/dispatchers';
 import { RxDispatcher } from 'app/modules/core/stores/rxjs-store/rx.dispatcher';
 import { AppRxStore } from 'app/modules/core/stores/rxjs-store/app.rx-store';
 import { AppQueries } from 'app/modules/core/business-models/app/app-queries.interface';

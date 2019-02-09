@@ -1,5 +1,5 @@
-import { Action } from './action.interface';
 import { Observable } from 'rxjs';
+import { Action } from 'app/modules/core/stores/action.interface';
 
 export abstract class CommandDispatcher {
   abstract actions$: Observable<Action>;

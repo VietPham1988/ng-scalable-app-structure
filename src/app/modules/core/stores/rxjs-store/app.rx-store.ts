@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Dictionary } from 'extension';
 import { AppState, initAppState } from 'app/modules/core/business-models/app/app.state-model';
-import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
+import { CommandDispatcher } from 'app/modules/shared/dispatchers';
 import { BaseRxStore } from 'app/modules/core/stores/rxjs-store/base.rx-store';
 import {
   AppActionNames,

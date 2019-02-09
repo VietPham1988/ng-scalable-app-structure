@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserQueries } from 'app/modules/core/business-models/user/user-queries.interface';
-import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
 import { GetUsersAction } from 'app/modules/core/business-models/user/user.actions';
+import { CommandDispatcher } from 'app/modules/shared/dispatchers';
 
 @Injectable()
 export class UsersBizModel {

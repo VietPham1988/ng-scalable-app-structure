@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { UserState, UserQueries, initUserState, UserActionNames } from 'app/modules/core/business-models/user';
 import { UserAkStore } from 'app/modules/core/stores/akita-store/features/user';
-import { CommandDispatcher } from 'app/modules/core/interfaces';
 import { BaseAkQueries } from 'app/modules/core/stores/akita-store/base.ak-queries';
+import { CommandDispatcher } from 'app/modules/shared/dispatchers';
 
 @Injectable()
 export class UserAkQueries extends BaseAkQueries<UserState> implements UserQueries {

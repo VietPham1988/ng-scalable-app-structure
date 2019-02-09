@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { UserQueries } from 'app/modules/core/business-models/user/user-queries.interface';
-import { CommandDispatcher } from 'app/modules/core/interfaces/command-dispatcher.interface';
 import { GetUsersAction, UserActionNames } from 'app/modules/core/business-models/user/user.actions';
 import { AutoUnsubscriber } from 'app/modules/shared/safe-unsubscriber';
+import { CommandDispatcher } from 'app/modules/shared/dispatchers';
 
 @Injectable()
 @AutoUnsubscriber()

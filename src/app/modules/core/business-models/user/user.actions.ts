@@ -1,4 +1,4 @@
-import { Action, BaseSuccessAction, BaseFailedAction } from 'app/modules/core/interfaces/action.interface';
+import { Action, BaseSuccessAction, BaseFailedAction } from 'app/modules/core/stores/action.interface';
 
 export enum UserActionNames {
   GET_USERS = '[USER] Get Users',

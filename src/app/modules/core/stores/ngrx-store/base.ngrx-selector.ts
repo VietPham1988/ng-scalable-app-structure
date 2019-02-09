@@ -1,6 +1,6 @@
 import { ofType, Actions } from '@ngrx/effects';
 import { filter } from 'rxjs/operators';
-import { BaseSuccessAction, BaseFailedAction } from 'app/modules/core/interfaces/action.interface';
+import { BaseSuccessAction, BaseFailedAction } from 'app/modules/core/stores/action.interface';
 
 export class BaseNgrxSelector {
   constructor(
