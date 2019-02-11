@@ -25,11 +25,11 @@ import { UserHttpService } from 'app/modules/shared/http-services/user.http-serv
     }),
     InMemoryWebApiModule.forRoot(DataService),
     ErrorModule,
+    SharedModule.forRoot(),
     // AppNgrxStoreModule.forRoot()
     // AppNgxsStoreModule.forRoot()
     // AppAkitaStoreModule.forRoot()
-    RxRootStoreModule.forRoot(),
-    SharedModule.forRoot()
+    RxRootStoreModule.forRoot()
   ],
   declarations: [
     AppComponent,

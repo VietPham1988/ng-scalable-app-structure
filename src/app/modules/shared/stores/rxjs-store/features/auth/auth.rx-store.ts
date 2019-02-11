@@ -5,8 +5,9 @@ import { UserState, initUserState } from 'app/modules/shared/business-models/use
 import { CommandDispatcher } from 'app/modules/shared/dispatchers';
 import { UserActionNames, GetUsersAction, UserSuccessAction, UserFailedAction } from 'app/modules/shared/business-models/user/user.actions';
 import { AutoUnsubscriber } from 'app/modules/shared/safe-unsubscriber';
-import { AuthState, AuthAsyncService, AuthActionNames, LoginAction, AuthFailedAction } from 'app/modules/shared/business-models/auth';
+import { AuthState, AuthAsyncService, AuthActionNames, LoginAction, AuthFailedAction, AuthSuccessAction } from 'app/modules/shared/business-models/auth';
 import { SaveJwtAction } from 'app/modules/shared/business-models/app';
+import { share, filter, tap } from 'rxjs/operators';
 
 @AutoUnsubscriber()
 @Injectable()
@@ -28,13 +29,14 @@ export class AuthRxStore extends BaseRxStore<AuthState> {
   }
 
   login(action: LoginAction) {
-    this.authService.login(action.payload)
-      .subscribe( token => {
-        const newAction = token.length
-          ? new SaveJwtAction(token)
-          : new AuthFailedAction(AuthActionNames.LOGIN, 'Login failed!');
-        this.dispatcher.fire(newAction);
-      });
+    this.authService.login(action.payload).pipe(
+      tap( token => !!token.length && this.dispatcher.fire(new SaveJwtAction(token)) )
+    ).subscribe( token => {
+      const act = !!token.length
+        ? new AuthSuccessAction(AuthActionNames.LOGIN, token)
+        : new AuthFailedAction(AuthActionNames.LOGIN, 'Login failed!');
+      this.dispatcher.fire(act);
+    });
   }
 
   successFunction(successAction: UserSuccessAction) {

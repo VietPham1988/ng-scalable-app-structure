@@ -13,6 +13,9 @@ import { AuthHttpService } from 'app/modules/shared/http-services/auth.http-serv
     CommonModule,
     ReactiveFormsModule,
     AuthRouting,
+    // AuthNgrxStoreModule
+    // AuthNgxsStoreModule
+    // AuthAkitaStoreModule
     AuthRxStoreModule
   ],
   providers: [

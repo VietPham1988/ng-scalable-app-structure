@@ -19,7 +19,7 @@ export class RxRootStoreModule {
         AppRxStore,
         {
           provide: AppQueries,
-          useExisting: AppRxQueries,
+          useClass: AppRxQueries,
         }
       ]
     };
