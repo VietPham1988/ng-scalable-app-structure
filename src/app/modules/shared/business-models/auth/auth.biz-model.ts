@@ -3,8 +3,7 @@ import { CommandDispatcher } from 'app/modules/shared/dispatchers';
 import { LoginCredentials } from 'app/modules/shared/business-models/auth/login-credentials.model';
 import { LoginAction, AuthActionNames, AuthFailedAction, AuthSuccessAction } from 'app/modules/shared/business-models/auth/auth.actions';
 import { AuthQueries } from 'app/modules/shared/business-models/auth/auth-queries.interface';
-import { map, tap } from 'rxjs/operators';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { AutoUnsubscriber, Unsubscriber } from 'app/modules/shared/safe-unsubscriber';
 
 @Injectable()
@@ -21,7 +20,7 @@ export class AuthBizModel {
           AuthActionNames.ACTION_FAILED,
           [AuthActionNames.LOGIN]
         ).subscribe((act: AuthFailedAction) => this.loginErrorMsg$.next(act.payload as string)),
-       this.dispatcher
+      this.dispatcher
         .actionOfSubType$(
           AuthActionNames.ACTION_SUCCESS,
           [AuthActionNames.LOGIN]
