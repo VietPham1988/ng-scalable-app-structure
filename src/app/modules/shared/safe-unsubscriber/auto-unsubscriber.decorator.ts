@@ -6,7 +6,6 @@ export function AutoUnsubscriber() {
   return function ( constructor ) {
     const original = constructor.prototype.ngOnDestroy;
     constructor.prototype.ngOnDestroy = function () {
-      console.log('class name', this['__proto__'].constructor.name);
       for (const prop of Object.keys(this)) {
         const property = this[ prop ];
         // tslint:disable-next-line:no-unused-expression

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserBizModel } from 'app/modules/core/business-models/user/user.biz-model';
+import { UserBizModel } from 'app/modules/shared/business-models/user/user.biz-model';
 import { Unsubscriber } from 'app/modules/shared/safe-unsubscriber/unsubscriber';
 import { AutoUnsubscriber } from 'app/modules/shared/safe-unsubscriber';
 
@@ -14,7 +14,7 @@ import { AutoUnsubscriber } from 'app/modules/shared/safe-unsubscriber';
   ]
 })
 @AutoUnsubscriber()
-export class UsersComponent implements OnInit, OnDestroy {
+export class UsersComponent implements OnInit {
   users$: Observable<[]>;
   users: [];
   constructor(
@@ -29,9 +29,4 @@ export class UsersComponent implements OnInit, OnDestroy {
     );
     this.userBizModel.fetchAllUsers();
   }
-
-  ngOnDestroy(): void {
-    console.log('UsersComponent\'s destroying function ');
-  }
-
 }

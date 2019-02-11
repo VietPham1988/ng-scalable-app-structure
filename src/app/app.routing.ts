@@ -6,11 +6,15 @@ export const AppRoutes: Routes = [
     // default routes
     path: '',
     pathMatch: 'full',
-    redirectTo: 'users'
+    redirectTo: 'login'
   },
   {
     path: 'users',
     loadChildren: './modules/user/user.module#UserModule'
+  },
+  {
+    path: 'auth',
+    loadChildren: './modules/auth/auth.module#AuthModule'
   },
   // {
   //   path: 'error/404',

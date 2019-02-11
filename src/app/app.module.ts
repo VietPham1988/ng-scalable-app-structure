@@ -6,13 +6,14 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ErrorModule } from 'app/modules/error/error.module';
 import { AppRoutes } from 'app/app.routing';
-import { DataService } from 'app/modules/shared/services/data.service';
-import { RxRootStoreModule } from 'app/modules/core/stores/rxjs-store';
 import { AppComponent } from 'app/components/app/app.component';
 import { HomeComponent } from 'app/components/home/home.component';
-import { UserAsyncService } from 'app/modules/core/async-services/user.async-service';
-import { UserHttpService } from 'app/modules/shared/services/user.http-service';
-import { EnvServiceProvider } from 'app/modules/core/environement-service/env.provider';
+import { SharedModule } from 'app/modules/shared/shared.module';
+import { DataService } from 'app/modules/shared/http-services/data.service';
+import { RxRootStoreModule } from 'app/modules/shared/stores/rxjs-store/rx-root-store.module';
+import { EnvServiceProvider } from 'app/modules/shared/environement-service/env.provider';
+import { UserAsyncService } from 'app/modules/shared/business-models/user/user.async-service';
+import { UserHttpService } from 'app/modules/shared/http-services/user.http-service';
 
 @NgModule({
   imports: [
@@ -27,18 +28,15 @@ import { EnvServiceProvider } from 'app/modules/core/environement-service/env.pr
     // AppNgrxStoreModule.forRoot()
     // AppNgxsStoreModule.forRoot()
     // AppAkitaStoreModule.forRoot()
-    RxRootStoreModule.forRoot()
+    RxRootStoreModule.forRoot(),
+    SharedModule.forRoot()
   ],
   declarations: [
     AppComponent,
     HomeComponent
   ],
   providers: [
-    EnvServiceProvider,
-    {
-      provide: UserAsyncService,
-      useClass: UserHttpService
-    }
+    EnvServiceProvider
   ],
   bootstrap: [AppComponent]
 })
